@@ -1,0 +1,183 @@
+[gd_scene load_steps=18 format=3 uid="uid://2yugjtekujyr"]
+
+[ext_resource type="Texture2D" uid="uid://ds24h1nh6bq75" path="res://assets/tiles.png" id="1_kh1nc"]
+[ext_resource type="Script" path="res://tile.gd" id="2_ie3hv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwuai"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(74, 0, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfm2m"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(0, 0, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7epw4"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(111, 0, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w25s0"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(37, 0, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wq8x"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(0, 37, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvsbu"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(37, 37, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e420y"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(74, 37, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn7cc"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(111, 37, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11v0k"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(148, 37, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72371"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(0, 74, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1jlu"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(37, 74, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvkfh"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(74, 74, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osag0"]
+atlas = ExtResource("1_kh1nc")
+region = Rect2(111, 74, 37, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi1cm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwuai")
+}],
+"loop": true,
+"name": &"bomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfm2m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7epw4")
+}],
+"loop": true,
+"name": &"died",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w25s0")
+}],
+"loop": true,
+"name": &"flag",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wq8x")
+}],
+"loop": true,
+"name": &"n0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvsbu")
+}],
+"loop": true,
+"name": &"n1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e420y")
+}],
+"loop": true,
+"name": &"n2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn7cc")
+}],
+"loop": true,
+"name": &"n3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11v0k")
+}],
+"loop": true,
+"name": &"n4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72371")
+}],
+"loop": true,
+"name": &"n5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1jlu")
+}],
+"loop": true,
+"name": &"n6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvkfh")
+}],
+"loop": true,
+"name": &"n7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osag0")
+}],
+"loop": true,
+"name": &"n8",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8l30s"]
+
+[node name="Tile" type="AnimatedSprite2D"]
+scale = Vector2(1.081, 1.081)
+sprite_frames = SubResource("SpriteFrames_pi1cm")
+script = ExtResource("2_ie3hv")
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = -17.0
+offset_top = -17.0
+offset_right = 17.0
+offset_bottom = 17.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8l30s")
+flat = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c73clboxdfmpx"]
+
+[ext_resource type="Script" path="res://Tileset10.gd" id="1_2nxp3"]
+[ext_resource type="PackedScene" uid="uid://2yugjtekujyr" path="res://tile.tscn" id="2_pg20q"]
+[ext_resource type="PackedScene" uid="uid://c8uvk7iupjvja" path="res://borders.tscn" id="3_bohf7"]
+[ext_resource type="PackedScene" uid="uid://cp2ts4yosjw7" path="res://hud.tscn" id="5_isyt2"]
+
+[node name="Tileset10" type="Node2D"]
+script = ExtResource("1_2nxp3")
+Tile = ExtResource("2_pg20q")
+
+[node name="borders" parent="." instance=ExtResource("3_bohf7")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 937.0
+offset_top = 154.0
+offset_right = 1016.0
+offset_bottom = 185.0
+text = "reveal all"
+
+[node name="HUD" parent="." instance=ExtResource("5_isyt2")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="maybe_won" from="HUD" to="." method="_on_hud_maybe_won"]
+[connection signal="new_game" from="HUD" to="." method="_on_hud_new_game"]

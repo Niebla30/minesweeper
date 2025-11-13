@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy8r1r3rw1jp5"]
+
+[ext_resource type="PackedScene" uid="uid://2yugjtekujyr" path="res://tile.tscn" id="1_wy7oe"]
+
+[node name="pruebas" type="Node"]
+
+[node name="Tile" parent="." instance=ExtResource("1_wy7oe")]
+position = Vector2(216, 152)
+number = -1
+
+[node name="Tile2" parent="." instance=ExtResource("1_wy7oe")]
+position = Vector2(253, 152)
+number = 2

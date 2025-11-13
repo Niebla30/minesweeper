@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8uvk7iupjvja"]
+
+[ext_resource type="Texture2D" uid="uid://d4engvngt5kog" path="res://assets/borders.png" id="1_0hd8h"]
+[ext_resource type="Script" path="res://borders.gd" id="1_qrm10"]
+
+[node name="borders" type="Node2D"]
+script = ExtResource("1_qrm10")
+
+[node name="topleft" type="Sprite2D" parent="."]
+position = Vector2(12, 57)
+texture = ExtResource("1_0hd8h")
+region_enabled = true
+region_rect = Rect2(6, 12, 24, 114)
+
+[node name="top" type="Sprite2D" parent="."]
+position = Vector2(44, 57)
+scale = Vector2(1.081, 1)
+texture = ExtResource("1_0hd8h")
+region_enabled = true
+region_rect = Rect2(33, 12, 37, 114)
+
+[node name="topright" type="Sprite2D" parent="."]
+position = Vector2(76, 57)
+texture = ExtResource("1_0hd8h")
+region_enabled = true
+region_rect = Rect2(73, 12, 24, 114)
+
+[node name="left" type="Sprite2D" parent="."]
+position = Vector2(12, 134)
+scale = Vector2(1, 1.081)
+texture = ExtResource("1_0hd8h")
+region_enabled = true
+region_rect = Rect2(6, 129, 24, 37)
+
+[node name="right" type="Sprite2D" parent="."]
+position = Vector2(76, 134)
+scale = Vector2(1, 1.081)
+texture = ExtResource("1_0hd8h")
+region_enabled = true
+region_rect = Rect2(73, 129, 24, 37)
+
+[node name="bottomleft" type="Sprite2D" parent="."]
+position = Vector2(12, 165)
+texture = ExtResource("1_0hd8h")
+region_enabled = true
+region_rect = Rect2(6, 169, 24, 22)
+
+[node name="bottom" type="Sprite2D" parent="."]
+position = Vector2(44, 165)
+scale = Vector2(1.081, 1)
+texture = ExtResource("1_0hd8h")
+region_enabled = true
+region_rect = Rect2(33, 169, 37, 22)
+
+[node name="bottomright" type="Sprite2D" parent="."]
+position = Vector2(76, 165)
+texture = ExtResource("1_0hd8h")
+region_enabled = true
+region_rect = Rect2(73, 169, 24, 22)

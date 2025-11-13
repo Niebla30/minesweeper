@@ -1,0 +1,271 @@
+[gd_scene load_steps=20 format=3 uid="uid://cp2ts4yosjw7"]
+
+[ext_resource type="Texture2D" uid="uid://ccdi81862jj1h" path="res://assets/buttons.png" id="1_haj6n"]
+[ext_resource type="Script" path="res://hud.gd" id="1_us2e8"]
+[ext_resource type="FontFile" uid="uid://cffleqhr3dh81" path="res://assets/led16sgmnt2-Regular.ttf" id="3_mn07f"]
+[ext_resource type="Texture2D" uid="uid://ds24h1nh6bq75" path="res://assets/tiles.png" id="4_46wov"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_575cu"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(232, 0, 58, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okpxq"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(232, 58, 58, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b85gg"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(174, 0, 58, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwxbn"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(174, 58, 58, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_copg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_575cu")
+}],
+"loop": true,
+"name": &"bomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okpxq")
+}],
+"loop": true,
+"name": &"bomb_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b85gg")
+}],
+"loop": true,
+"name": &"flag",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwxbn")
+}],
+"loop": true,
+"name": &"flag_pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j8w8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv1ed"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(116, 0, 58, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dsoc"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(116, 58, 58, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jraog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv1ed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dsoc")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw8kp"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(58, 0, 58, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eslpn"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(0, 0, 58, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7ogy"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(0, 58, 58, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qe2s"]
+atlas = ExtResource("1_haj6n")
+region = Rect2(58, 58, 58, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4u3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw8kp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eslpn")
+}],
+"loop": true,
+"name": &"died",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7ogy")
+}],
+"loop": true,
+"name": &"died_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qe2s")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crjko"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_us2e8")
+
+[node name="Mode" type="AnimatedSprite2D" parent="."]
+position = Vector2(46, 41)
+sprite_frames = SubResource("SpriteFrames_copg6")
+animation = &"bomb"
+metadata/_edit_group_ = true
+
+[node name="ModeButton" type="Button" parent="Mode"]
+offset_left = -27.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 27.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j8w8a")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="AnimatedSprite2D" parent="."]
+position = Vector2(135, 41)
+sprite_frames = SubResource("SpriteFrames_jraog")
+metadata/_edit_group_ = true
+
+[node name="SettingsButton" type="Button" parent="Settings"]
+offset_left = -27.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 27.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j8w8a")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Smile" type="AnimatedSprite2D" parent="."]
+position = Vector2(224, 41)
+sprite_frames = SubResource("SpriteFrames_g4u3e")
+metadata/_edit_group_ = true
+
+[node name="SmileButton" type="Button" parent="Smile"]
+offset_left = -27.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 27.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j8w8a")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BombsLeft" type="Node2D" parent="."]
+position = Vector2(99, 139)
+
+[node name="Message" type="Label" parent="BombsLeft"]
+offset_top = -13.0
+offset_right = 46.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.211765, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mn07f")
+theme_override_font_sizes/font_size = 30
+text = "54"
+
+[node name="Sprite2D" type="Sprite2D" parent="BombsLeft"]
+position = Vector2(-10, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_46wov")
+region_enabled = true
+region_rect = Rect2(78, 5, 30, 30)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Time" type="Node2D" parent="."]
+position = Vector2(105, 191)
+
+[node name="Message" type="Label" parent="Time"]
+offset_left = -35.0
+offset_top = -12.0
+offset_right = 35.0
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(0.211765, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mn07f")
+theme_override_font_sizes/font_size = 30
+text = "00:00
+"
+
+[node name="SettingsConfig" type="Node2D" parent="."]
+position = Vector2(608, 167)
+scale = Vector2(2, 2)
+
+[node name="Fondo" type="Button" parent="SettingsConfig"]
+offset_left = -80.0
+offset_top = -70.5
+offset_right = 80.0
+offset_bottom = 73.5
+theme_override_styles/focus = SubResource("StyleBoxEmpty_crjko")
+disabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="NewGameButton" type="Button" parent="SettingsConfig"]
+offset_left = -56.0
+offset_top = -54.5
+offset_right = 56.0
+offset_bottom = -23.5
+theme_override_styles/focus = SubResource("StyleBoxEmpty_crjko")
+text = "NEW GAME"
+metadata/_edit_use_anchors_ = true
+
+[node name="ChangeSizeButton" type="Button" parent="SettingsConfig"]
+offset_left = -64.0
+offset_top = -14.5
+offset_right = 64.0
+offset_bottom = 16.5
+theme_override_styles/focus = SubResource("StyleBoxEmpty_crjko")
+text = "CHANGE SIZE"
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="SettingsConfig"]
+offset_left = -32.0
+offset_top = 25.5
+offset_right = 32.0
+offset_bottom = 56.5
+theme_override_styles/focus = SubResource("StyleBoxEmpty_crjko")
+text = "EXIT"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Mode/ModeButton" to="." method="_on_mode_button_button_down"]
+[connection signal="button_up" from="Mode/ModeButton" to="." method="_on_mode_button_button_up"]
+[connection signal="button_down" from="Settings/SettingsButton" to="." method="_on_settings_button_button_down"]
+[connection signal="button_up" from="Settings/SettingsButton" to="." method="_on_settings_button_button_up"]
+[connection signal="button_down" from="Smile/SmileButton" to="." method="_on_smile_button_button_down"]
+[connection signal="button_up" from="Smile/SmileButton" to="." method="_on_smile_button_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="SettingsConfig/NewGameButton" to="." method="_on_new_game_button_pressed"]
