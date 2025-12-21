@@ -180,9 +180,3 @@ func _on_button_pressed():
 	for row in tileset:
 		for tile in row:
 			tile.reveal(false)
-
-
-
-
-
-

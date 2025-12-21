@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8uvk7iupjvja"]
 
 [ext_resource type="Texture2D" uid="uid://d4engvngt5kog" path="res://assets/borders.png" id="1_0hd8h"]
-[ext_resource type="Script" path="res://borders.gd" id="1_qrm10"]
+[ext_resource type="Script" uid="uid://dct6jhx6lveoe" path="res://borders.gd" id="1_qrm10"]
 
 [node name="borders" type="Node2D"]
 script = ExtResource("1_qrm10")
