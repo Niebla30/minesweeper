@@ -14,10 +14,6 @@ func _ready():
 func set_number(n):
 	number = n
 
-func _on_button_pressed():
-	var mode = get_parent().flag_mode
-	reveal(mode)
-
 func disable(disabled = true): #if false, ables tile
 	$Button.disabled = disabled
 	
@@ -50,9 +46,13 @@ func reveal(flag_mode):
 			
 
 func _on_button_button_down():
+	if not revealed:
+		play("n0")
 	if revealed and not adyacents_revealed and not get_parent().is_safe(self):
 		get_parent().highlight_adyacents(self)
 		
 func _on_button_button_up():
+	if not revealed:
+		reveal(get_parent().flag_mode)
 	if revealed and not adyacents_revealed and not get_parent().is_safe(self):
 		get_parent().unhighlight_adyacents(self)
