@@ -44,7 +44,7 @@ func reveal(flag_mode):
 			adyacents_revealed = true
 			get_parent().reveal_adyacents(self)
 			
-
+"""
 func _on_button_button_down():
 	if not revealed:
 		play("n0")
@@ -56,3 +56,27 @@ func _on_button_button_up():
 		reveal(get_parent().flag_mode)
 	if revealed and not adyacents_revealed and not get_parent().is_safe(self):
 		get_parent().unhighlight_adyacents(self)
+"""
+		
+func _on_button_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if $Button.disabled: #Avoid playing on Game Over
+			return
+		if event.is_pressed():
+			if event.button_index == MOUSE_BUTTON_RIGHT:
+				print("¡Press derecho detectado!") #Debug only
+			elif event.button_index == MOUSE_BUTTON_LEFT:
+				if not revealed:
+					play("n0")
+				if revealed and not adyacents_revealed and not get_parent().is_safe(self):
+					get_parent().highlight_adyacents(self)
+		if event.is_released(): 
+			if event.button_index == MOUSE_BUTTON_RIGHT:
+				if not revealed:
+					reveal(true) #Flaging
+			elif event.button_index == MOUSE_BUTTON_LEFT:
+					if not revealed:
+						reveal(get_parent().flag_mode)
+					if revealed and not adyacents_revealed and not get_parent().is_safe(self):
+						get_parent().unhighlight_adyacents(self)
+	

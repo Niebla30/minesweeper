@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://2yugjtekujyr"]
 
 [ext_resource type="Texture2D" uid="uid://ds24h1nh6bq75" path="res://assets/tiles.png" id="1_kh1nc"]
-[ext_resource type="Script" uid="uid://cleoxgd1osda1" path="res://tile.gd" id="2_ie3hv"]
+[ext_resource type="Script" uid="uid://dylv36hgnyeab" path="res://tile.gd" id="2_ie3hv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwuai"]
 atlas = ExtResource("1_kh1nc")
@@ -180,4 +180,5 @@ flat = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
